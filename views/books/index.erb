@@ -1,0 +1,32 @@
+<% if @books.length == 0 %>
+  <h1>No Books yet :(</h1>
+<% else %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">           
+            <table id="mytable" class="table table-bordred table-striped">              
+              <thead>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Information</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </thead>
+              <tbody>
+              <% @books.each do |book| %>
+                <tr>
+                <td><%=book[:id]%></td>
+                <td><%=book[:title]%></td>
+                <td><%=book[:body]%></td>
+                <td><a href="/<%=book[:id]%>"><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></a></td>
+                <td><a href="/delete/<%=book[:id]%>"><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></a></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

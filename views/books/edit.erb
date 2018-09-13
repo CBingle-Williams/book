@@ -1,0 +1,12 @@
+<h1>Edit Book</h1>
+<form class="" action="/<%=@book[:id]%>" method="post">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control"name="title" id="title" value="<%=@book[:title]%>" placeholder="Enter the title">
+  </div>
+  <div class="form-group">
+    <label for="body">Body</label>
+    <textarea type="text" class="form-control" name="body" id="body" rows="4" cols="50" placeholder="Enter some text!"><%=@book[:body]%></textarea>
+  </div>
+  <button type="hidden" class="btn btn-primary" name="_method" value="PUT">Submit</button>
+</form>
