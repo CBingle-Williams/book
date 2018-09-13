@@ -1,0 +1,6 @@
+<h1>Delete Book</h1>
+<form class="" action="/delete/<%=@book[:id]%>" method="post">
+  <h1>Book: <%=@book[:title]%></h1>
+  <br>
+  <button type="hidden" class="btn btn-primary" name="_method" value="DELETE">Delete</button>
+</form>
